@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yussa-port.vercel.app/sitemap.xml
