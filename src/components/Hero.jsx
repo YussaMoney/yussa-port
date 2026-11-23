@@ -27,7 +27,7 @@ function Letters({ word, delay = 0, className = '' }) {
 function Badge() {
   const text = 'Available for work · Full-Stack Dev · '
   return (
-    <div className="relative size-28 md:size-32">
+    <div className="relative size-28 shrink-0 md:size-32">
       <svg viewBox="0 0 100 100" className="absolute inset-0 animate-[spin-slow_18s_linear_infinite]" aria-hidden="true">
         <defs>
           <path id="ring" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
@@ -107,18 +107,27 @@ export default function Hero({ ready }) {
         <p className="col-span-12 max-w-md leading-snug text-ink/90 md:col-span-5 md:text-lg">
           <span className="font-serif text-2xl italic md:text-3xl">Full-stack developer</span> in Lagos. {profile.intro}
         </p>
-        <div className="col-span-6 md:col-span-3 md:col-start-7">
-          <p className="label text-muted">Currently</p>
-          <p className="mt-2 leading-snug">Zonal Coordinator at E-Tech / ICDL, and freelancing on the side</p>
+        <div className="col-span-6 flex items-start gap-4 md:col-span-4 md:col-start-7">
+          <img
+            src="/images/yusuf-passport-sm.webp"
+            alt="Passport photo of Yusuf Abdulazeez"
+            width="56"
+            height="72"
+            className="hidden h-[72px] w-14 shrink-0 rounded-[2px] object-cover ring-1 ring-ink/15 sm:block"
+          />
+          <div>
+            <p className="label text-muted">Currently</p>
+            <p className="mt-2 leading-snug">Zonal Coordinator at E-Tech / ICDL, and freelancing on the side</p>
+          </div>
         </div>
-        <div className="col-span-6 flex items-end justify-end gap-6 md:col-span-3 md:col-start-10">
+        <div className="col-span-6 flex items-end justify-end gap-6 md:col-span-2 md:col-start-11">
           <a
             href="#work"
             onClick={(e) => {
               e.preventDefault()
               scrollToId('work')
             }}
-            className="label link-underline hidden pb-2 sm:inline"
+            className="label link-underline hidden pb-2 whitespace-nowrap xl:inline"
           >
             Scroll ↓
           </a>
