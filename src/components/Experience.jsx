@@ -85,7 +85,7 @@ export default function Experience() {
         <p className="label col-span-12 text-muted md:col-span-3">Education & certifications</p>
         <ul className="col-span-12 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 md:col-span-9 lg:grid-cols-3">
           {education.map((e, i) => (
-            <Reveal as="li" key={e.title} delay={i * 0.05} y={12} className="bg-bg p-6">
+            <Reveal as="li" key={e.title} delay={i * 0.05} y={12} className="bg-bg p-6 sm:last:col-span-2">
               <p className="font-display text-xl leading-tight font-medium">{e.title}</p>
               <p className="label mt-3 text-muted">{e.meta}</p>
             </Reveal>
