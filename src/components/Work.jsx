@@ -13,6 +13,22 @@ function StatusDot({ status }) {
   )
 }
 
+function Shot({ project }) {
+  return (
+    <img
+      src={project.image}
+      srcSet={`${project.imageSm} 720w, ${project.image.replace('.webp', '-md.webp')} 1080w, ${project.image} 1440w`}
+      sizes="(min-width: 768px) 52vw, 92vw"
+      alt={`Screenshot of the ${project.title} homepage`}
+      loading="lazy"
+      decoding="async"
+      width="1440"
+      height="900"
+      className="aspect-[16/10] w-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+    />
+  )
+}
+
 // Cards stick to the top and stack; earlier cards shrink and dim as the
 // next one slides over them.
 function useIsDesktop() {
@@ -47,7 +63,7 @@ function ProjectCard({ project, index, total, progress, stack }) {
           <div className="flex flex-col justify-between gap-8 md:col-span-5">
             <div>
               <div className="flex items-center justify-between">
-                <span className="label text-ink/60">
+                <span className="label text-ink/80">
                   {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
                 </span>
                 <StatusDot status={project.status} />
@@ -55,7 +71,7 @@ function ProjectCard({ project, index, total, progress, stack }) {
               <h3 className="mt-6 font-display text-[clamp(2.2rem,4.4vw,4rem)] leading-[0.95] font-semibold tracking-[-0.035em]">
                 {project.title}
               </h3>
-              <p className="mt-2 font-serif text-xl text-ink/70 italic">
+              <p className="mt-2 font-serif text-xl text-ink/80 italic">
                 {project.kind} · {project.year}
               </p>
               <p className="mt-6 max-w-md leading-relaxed text-ink/85">{project.summary}</p>
@@ -64,11 +80,11 @@ function ProjectCard({ project, index, total, progress, stack }) {
             <div className="space-y-5">
               <dl className="grid grid-cols-2 gap-4 border-t border-white/15 pt-5 text-sm">
                 <div>
-                  <dt className="label text-ink/50">Role</dt>
+                  <dt className="label text-ink/80">Role</dt>
                   <dd className="mt-1">{project.role}</dd>
                 </div>
                 <div>
-                  <dt className="label text-ink/50">Stack</dt>
+                  <dt className="label text-ink/80">Stack</dt>
                   <dd className="mt-1">{project.stack.join(', ')}</dd>
                 </div>
               </dl>
@@ -86,7 +102,7 @@ function ProjectCard({ project, index, total, progress, stack }) {
                     </a>
                   ))
                 ) : (
-                  <span className="label rounded-full border border-dashed border-ink/25 px-4 py-2.5 text-ink/60">
+                  <span className="label rounded-full border border-dashed border-ink/25 px-4 py-2.5 text-ink/80">
                     Preview on request
                   </span>
                 )}
@@ -94,25 +110,26 @@ function ProjectCard({ project, index, total, progress, stack }) {
             </div>
           </div>
 
-          <a
-            href={primary?.href}
-            target={primary ? '_blank' : undefined}
-            rel="noreferrer"
-            tabIndex={primary ? undefined : -1}
-            aria-label={primary ? `${primary.label}: ${project.title}` : undefined}
-            data-cursor={primary ? 'Visit' : 'Soon'}
-            className={`group relative order-first block overflow-hidden rounded-md md:order-none md:col-span-7 ${primary ? '' : 'cursor-default'}`}
-            onClick={(e) => !primary && e.preventDefault()}
-          >
-            <img
-              src={project.image}
-              srcSet={`${project.imageSm} 720w, ${project.image} 1440w`}
-              sizes="(min-width: 768px) 55vw, 92vw"
-              alt={`Screenshot of the ${project.title} homepage`}
-              loading="lazy"
-              className="aspect-[16/10] w-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
-            />
-          </a>
+          {/* Live projects link out from the screenshot; unreleased ones are a plain figure */}
+          {primary ? (
+            <a
+              href={primary.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${primary.label}: ${project.title}`}
+              data-cursor="Visit"
+              className="group relative order-first block overflow-hidden rounded-md md:order-none md:col-span-7"
+            >
+              <Shot project={project} />
+            </a>
+          ) : (
+            <div
+              data-cursor="Soon"
+              className="group relative order-first overflow-hidden rounded-md md:order-none md:col-span-7"
+            >
+              <Shot project={project} />
+            </div>
+          )}
         </div>
       </motion.article>
     </div>
@@ -155,10 +172,10 @@ export default function Work() {
                 href={w.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-baseline justify-between gap-4 py-4 transition-colors hover:text-accent"
+                className="group flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-4 transition-colors hover:text-accent"
               >
                 <span className="font-display text-2xl font-medium tracking-tight md:text-3xl">{w.title}</span>
-                <span className="label shrink-0 text-muted transition-colors group-hover:text-accent">
+                <span className="label text-muted transition-colors group-hover:text-accent">
                   {w.stack} ↗
                 </span>
               </a>

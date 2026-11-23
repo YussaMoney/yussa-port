@@ -75,7 +75,7 @@ export default function Contact() {
             type="button"
             onClick={copy}
             className="group min-w-0 text-left"
-            aria-label={`Copy email address ${profile.email}`}
+            data-testid="copy-email"
           >
             <span className="label block text-muted">{copied ? 'Copied to clipboard ✓' : 'Or copy my address'}</span>
             <span className="link-underline mt-1 inline break-all font-display text-xl md:text-3xl">{profile.email}</span>
@@ -121,12 +121,19 @@ export default function Contact() {
         </div>
       </div>
 
-      <div
-        aria-hidden="true"
-        className="mt-16 font-display text-[22vw] leading-[0.75] font-bold tracking-[-0.06em] text-ink/[0.06] uppercase select-none"
-      >
-        Yussa
-      </div>
+      {/* Decorative watermark, drawn as SVG so it scales to the full width */}
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 1000 250" className="mt-16 block w-full text-ink/[0.06] select-none">
+        <text
+          x="0"
+          y="232"
+          textLength="1000"
+          lengthAdjust="spacingAndGlyphs"
+          className="fill-current font-display font-bold"
+          style={{ fontSize: 320 }}
+        >
+          YUSSA
+        </text>
+      </svg>
       <p className="label mt-6 flex flex-wrap justify-between gap-2 text-muted">
         <span>© {YEAR} Yusuf Abdulazeez</span>
         <span>Designed & built by me in Lagos</span>

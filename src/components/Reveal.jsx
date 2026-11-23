@@ -14,13 +14,9 @@ export function RevealText({ text, as = 'span', className = '', delay = 0, stagg
   const Tag = motion[as]
   const words = text.split(' ')
   return (
-    <Tag
-      className={className}
-      aria-label={text}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once, margin: '0px 0px -10% 0px' }}
-    >
+    <Tag className={className} initial="hidden" whileInView="show" viewport={{ once, margin: '0px 0px -10% 0px' }}>
+      {/* Screen readers get the sentence once; the animated words are hidden from them */}
+      <span className="sr-only">{text}</span>
       {words.map((word, i) => (
         <span key={i} aria-hidden="true" className="inline-block overflow-hidden pb-[0.08em] align-top">
           <motion.span className="inline-block" variants={wordVariants} custom={delay + i * stagger}>

@@ -75,7 +75,7 @@ export default function Hero({ ready }) {
             style={{ y: imgY, scale: imgScale }}
             fetchPriority="high"
           />
-          <figcaption className="label absolute bottom-3 left-3 text-ink/80">B.Sc · UI ’25</figcaption>
+          <figcaption className="label absolute bottom-3 left-3 rounded-sm bg-black/45 px-1.5 py-0.5 text-ink">B.Sc · UI ’25</figcaption>
         </motion.figure>
 
         {/* Name */}

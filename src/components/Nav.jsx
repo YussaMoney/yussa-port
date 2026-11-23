@@ -51,7 +51,7 @@ export default function Nav() {
       <header className="fixed inset-x-0 top-0 z-50 gutter text-ink mix-blend-difference">
         <nav className="flex items-center justify-between py-5" aria-label="Main">
           <a href="#top" onClick={go('top')} className="font-display text-lg font-semibold tracking-tight">
-            Yussa<span className="align-super text-[0.6em]">©</span>
+            Yussa<span className="align-super text-xs">©</span>
           </a>
 
           <ul className="hidden items-center gap-8 md:flex">
