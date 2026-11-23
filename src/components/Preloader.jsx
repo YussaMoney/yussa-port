@@ -7,7 +7,7 @@ export default function Preloader({ onDone }) {
 
   useEffect(() => {
     const controls = animate(0, 100, {
-      duration: 1.6,
+      duration: 1.1,
       ease: [0.65, 0, 0.35, 1],
       onUpdate: (v) => setCount(Math.round(v)),
       onComplete: () => setTimeout(onDone, 250),
