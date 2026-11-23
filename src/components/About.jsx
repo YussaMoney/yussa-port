@@ -24,7 +24,19 @@ export default function About() {
   return (
     <section id="about" className="gutter py-28 md:py-40">
       <div className="grid grid-cols-12 gap-x-4 gap-y-10">
-        <p className="label col-span-12 text-muted md:col-span-3">(01) — About</p>
+        <div className="col-span-12 md:col-span-3">
+          <p className="label text-muted">(01) — About</p>
+          <Reveal className="mt-8 hidden md:block">
+            <img
+              src="/images/yusuf-suit.webp"
+              srcSet="/images/yusuf-suit-sm.webp 480w, /images/yusuf-suit.webp 900w"
+              sizes="22vw"
+              alt="Yusuf Abdulazeez in a navy suit and graduation hood"
+              loading="lazy"
+              className="aspect-[3/4] w-full max-w-[17rem] rounded-[2px] object-cover object-top"
+            />
+          </Reveal>
+        </div>
 
         <div className="col-span-12 md:col-span-9">
           <RevealText

@@ -43,7 +43,17 @@ export default function Contact() {
   return (
     <footer id="contact" className="relative overflow-hidden bg-bg-2 gutter pt-28 pb-8 md:pt-40">
       <div className="grid grid-cols-12 gap-x-4 gap-y-6">
-        <p className="label col-span-12 text-muted md:col-span-3">(05) — Contact</p>
+        <div className="col-span-12 md:col-span-3">
+          <p className="label text-muted">(05) — Contact</p>
+          <img
+            src="/images/yusuf-seated.webp"
+            srcSet="/images/yusuf-seated-sm.webp 480w, /images/yusuf-seated.webp 900w"
+            sizes="(min-width: 768px) 20vw, 40vw"
+            alt="Yusuf Abdulazeez seated in a navy suit with a Class of 2024 stole"
+            loading="lazy"
+            className="mt-8 aspect-[2/3] w-40 rounded-[2px] object-cover md:w-full md:max-w-[15rem]"
+          />
+        </div>
         <div className="col-span-12 md:col-span-9">
           <p className="font-serif text-3xl text-muted italic md:text-4xl">Have a project in mind?</p>
           <h2 className="mt-2 font-display text-[clamp(3.4rem,13vw,13rem)] leading-[0.85] font-bold tracking-[-0.055em] uppercase">
