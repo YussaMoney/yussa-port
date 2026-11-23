@@ -25,14 +25,14 @@ function Letters({ word, delay = 0, className = '' }) {
 
 // Rotating text ring around the "available" badge.
 function Badge() {
-  const text = 'Available for new projects · Frontend Developer · '
+  const text = 'Available for work · Full-Stack Dev · '
   return (
     <div className="relative size-28 md:size-32">
       <svg viewBox="0 0 100 100" className="absolute inset-0 animate-[spin-slow_18s_linear_infinite]" aria-hidden="true">
         <defs>
           <path id="ring" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
         </defs>
-        <text className="fill-ink font-mono text-[7.4px] uppercase tracking-[0.18em]">
+        <text className="fill-ink font-mono text-[7.4px] uppercase tracking-[0.24em]">
           <textPath href="#ring">{text}</textPath>
         </text>
       </svg>
@@ -105,7 +105,7 @@ export default function Hero({ ready }) {
         transition={{ duration: 1, ease, delay: 0.9 }}
       >
         <p className="col-span-12 max-w-md leading-snug text-ink/90 md:col-span-5 md:text-lg">
-          <span className="font-serif text-2xl italic md:text-3xl">Frontend developer</span> in Lagos. {profile.intro}
+          <span className="font-serif text-2xl italic md:text-3xl">Full-stack developer</span> in Lagos. {profile.intro}
         </p>
         <div className="col-span-6 md:col-span-3 md:col-start-7">
           <p className="label text-muted">Currently</p>

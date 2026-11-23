@@ -3,14 +3,14 @@
 export const profile = {
   name: 'Yusuf Abdulazeez',
   short: 'Yussa',
-  role: 'Frontend Developer',
+  role: 'Full-Stack Developer',
   location: 'Lagos, Nigeria',
   timezone: 'Africa/Lagos',
   email: 'azeezyusufolamilekan159@gmail.com',
   cv: '/Yusuf_Abdulazeez_CV.pdf',
   available: true,
   intro:
-    'I design and build fast, considered websites with React, for businesses across Africa. I also lead digital adoption for 24 universities and polytechnics, so I know what it takes for people to actually use what gets built.',
+    'I design and build fast, considered websites and web apps, from React frontends to Node.js APIs and databases, for businesses across Africa. I also lead digital adoption for 24 universities and polytechnics, so I know what it takes for people to actually use what gets built.',
 }
 
 export const socials = [
@@ -136,7 +136,7 @@ export const services = [
   },
   {
     title: 'Web apps & dashboards',
-    body: 'React frontends for dashboards, admin tools and multi-step flows, connected to REST APIs, with auth and real data.',
+    body: 'Full-stack apps, dashboards and admin tools: React on the front, Node.js, Express and MongoDB or SQL behind it, with auth and real data.',
   },
   {
     title: 'Digital adoption & training',
@@ -167,7 +167,7 @@ export const experience = [
     ],
   },
   {
-    role: 'Frontend Developer',
+    role: 'Full-Stack Developer',
     org: 'Freelance',
     period: 'Ongoing',
     points: [
